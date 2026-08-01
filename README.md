@@ -1,6 +1,6 @@
 # Comunicação entre Service e Interface
 
-[← Voltar](https://github.com/JosiTubaroski/Controllers_Services/blob/main/README.md)
+[← Voltar](https://github.com/joycequoos/Controllers_Services/blob/main/README.md)
 
 Passo para registrar a comunicação entre a interface `IAutorInterface` e a classe `AutorService` dentro do arquivo `Program.cs`, através da injeção de dependência.
 
@@ -8,7 +8,7 @@ Passo para registrar a comunicação entre a interface `IAutorInterface` e a cla
 
 Para que a interface `IAutorInterface` e a implementação `AutorService` se comuniquem, é necessário registrá-las no container de injeção de dependência da aplicação, no arquivo `Program.cs`.
 
-![Comunicação entre Service e Interface](https://github.com/JosiTubaroski/Controllers_Services/blob/main/img/01_Comunicacao_Services_Interface.png)
+![Comunicação entre Service e Interface](https://github.com/joycequoos/Controllers_Services/blob/main/img/01_Comunicacao_Services_Interface.png)
 
 ```csharp
 builder.Services.AddScoped<IAutorInterface, AutorService>();
