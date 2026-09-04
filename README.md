@@ -1,17 +1,17 @@
-# Comunicação entre Service e Interface
+# Communication between Service and Interface
 
-[← Voltar](https://github.com/joycequoos/Controllers_Services/blob/main/README.md)
+[← Back](https://github.com/joycequoos/Controllers_Services/blob/main/README.md)
 
-Passo para registrar a comunicação entre a interface `IAutorInterface` e a classe `AutorService` dentro do arquivo `Program.cs`, através da injeção de dependência.
+Step to register the communication between the `IAutorInterface` interface and the `AutorService` class within the `Program.cs` file, through dependency injection.
 
-## Registrando a Comunicação no Program.cs
+## Registering the Communication in Program.cs
 
-Para que a interface `IAutorInterface` e a implementação `AutorService` se comuniquem, é necessário registrá-las no container de injeção de dependência da aplicação, no arquivo `Program.cs`.
+For the `IAutorInterface` interface and the `AutorService` implementation to communicate, they need to be registered in the application's dependency injection container, in the `Program.cs` file.
 
-![Comunicação entre Service e Interface](https://github.com/joycequoos/Controllers_Services/blob/main/img/01_Comunicacao_Services_Interface.png)
+[![Communication between Service and Interface](https://github.com/joycequoos/Controllers_Services/raw/main/img/01_Comunicacao_Services_Interface.png)](https://github.com/joycequoos/Controllers_Services/blob/main/img/01_Comunicacao_Services_Interface.png)
 
-```csharp
+```
 builder.Services.AddScoped<IAutorInterface, AutorService>();
 ```
 
-Esse registro informa ao ASP.NET Core que, sempre que a interface `IAutorInterface` for solicitada (por exemplo, no construtor de um Controller), o framework deve fornecer uma instância da classe `AutorService`. O escopo `Scoped` garante que cada requisição HTTP receba sua própria instância do serviço.
+This registration tells ASP.NET Core that whenever the `IAutorInterface` interface is requested (for example, in a Controller's constructor), the framework should provide an instance of the `AutorService` class. The `Scoped` lifetime ensures that each HTTP request receives its own instance of the service.
